@@ -127,6 +127,7 @@ public class BasicNetwork implements Network {
 						throw new ServerError(networkResponse);
 					}
 				} else {
+					networkResponse = new NetworkResponse(statusCode, "".getBytes(), parseCharset(httpResponse));
 					throw new NetworkError(networkResponse);
 				}
 			}
